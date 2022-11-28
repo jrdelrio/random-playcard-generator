@@ -1,1 +1,45 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card {
+  height: 300px;
+  width: 200px;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 15px;
+}
+.pinta {
+  padding-top: 10px;
+  padding-left: 20px;
+  font-size: 50px;
+}
+
+.inv {
+  padding-bottom: 10px;
+  padding-right: 20px;
+  margin-left: auto;
+  transform: rotate(180deg);
+}
+
+.num {
+  margin: auto;
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.col-red {
+  color: red;
+}
+
+.btn {
+  text-align: center;
+  margin-top: 20px;
+  background-color: white;
+}
