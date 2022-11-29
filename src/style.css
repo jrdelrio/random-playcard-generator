@@ -43,3 +43,8 @@ body {
   margin-top: 20px;
   background-color: white;
 }
+
+.inputs {
+  display: inline;
+  margin-top: 10px;
+}

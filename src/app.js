@@ -4,6 +4,7 @@ import "./style.css";
 
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
+import { main } from "@popperjs/core";
 
 window.onload = function() {
   const numList = [
@@ -24,7 +25,7 @@ window.onload = function() {
 
   const pintaList = ["♦", "♥", "♠", "♣"];
 
-  function render(numListfunc, pintaListfunc) {
+  const handleClick = () => {
     const topPinta = document.querySelector(".pinta");
     const number = document.querySelector(".num");
     const bottomPinta = document.querySelector(".inv");
@@ -36,8 +37,7 @@ window.onload = function() {
       bottomPinta.classList.remove("col-red");
     }
 
-    const randomPinta =
-      pintaListfunc[Math.floor(Math.random() * pintaListfunc.length)];
+    const randomPinta = pintaList[Math.floor(Math.random() * pintaList.length)];
 
     topPinta.innerHTML = randomPinta;
     bottomPinta.innerHTML = randomPinta;
@@ -50,18 +50,25 @@ window.onload = function() {
       console.log("cambiada top a rojo");
     }
 
-    number.innerHTML =
-      numListfunc[Math.floor(Math.random() * numListfunc.length)];
-  }
+    number.innerHTML = numList[Math.floor(Math.random() * numList.length)];
 
-  render(numList, pintaList);
+    const inw = document.querySelector("#inputwidth");
+    const inh = document.querySelector("#inputheigth");
+    const divcard = document.querySelector(".card");
 
-  const handleClick = () => {
-    render(numList, pintaList);
+    console.log(inw.value);
+    console.log(inh.value);
+    if (inw !== "") {
+      divcard.style = `height: ${inh.value}px; width: ${inw.value}px;`;
+    }
+
+    console.log("renderizado");
   };
 
   const button = document.querySelector(".btn");
   button.addEventListener("click", handleClick);
 
   console.log("Hello Rigo from the console!");
+
+  setInterval(handleClick, 10000);
 };
