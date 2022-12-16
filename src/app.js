@@ -32,9 +32,8 @@ window.onload = function() {
 
     if (topPinta.classList.contains("col-red")) {
       topPinta.classList.remove("col-red");
-    }
-    if (bottomPinta.classList.contains("col-red")) {
       bottomPinta.classList.remove("col-red");
+      number.classList.remove("col-red");
     }
 
     const randomPinta = pintaList[Math.floor(Math.random() * pintaList.length)];
@@ -46,6 +45,10 @@ window.onload = function() {
     if (randomPinta === "♥" || randomPinta === "♦") {
       topPinta.classList.add("col-red");
       console.log("cambiada top a rojo");
+
+      number.classList.add("col-red");
+      console.log("cambiado numero a rojo");
+
       bottomPinta.classList.add("col-red");
       console.log("cambiada top a rojo");
     }
@@ -68,7 +71,6 @@ window.onload = function() {
   const button = document.querySelector(".btn");
   button.addEventListener("click", handleClick);
 
-  console.log("Hello Rigo from the console!");
-
+  handleClick();
   setInterval(handleClick, 10000);
 };
